@@ -16,7 +16,7 @@
 	"require": {
 		"silverstripe/framework": "^4",
         "silverstripe/cms": "^4",
-        "silverstripe/silverstripe-lumberjack": "^2"
+        "silverstripe/lumberjack": "^2"
 	},
 	"autoload": {
 		"psr-4": {
