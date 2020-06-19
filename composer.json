@@ -1,0 +1,26 @@
+{
+	"name": "evanshunt/lumberjack-sort-and-summary",
+	"description": "Uses $summary_fields, $default_sort, and $plural_name for LumberJack when only one class is allowed for children",
+	"type": "silverstripe-vendormodule",
+	"homepage": "http://github.com/evanshunt/lumberjack-sort-and-summary",
+	"keywords": ["silverstripe", "lumberjack"],
+	"authors": [
+		{
+			"name": "David Toews",
+			"email": "davejtoews@gmail.com"
+		}
+	],
+	"support": {
+		"issues": "http://github.com/evanshunt/lumberjack-sort-and-summary/issues"
+	},
+	"require": {
+		"silverstripe/framework": "^4",
+        "silverstripe/cms": "^4",
+        "silverstripe/silverstripe-lumberjack": "^2"
+	},
+	"autoload": {
+		"psr-4": {
+			"EvansHunt\\LumberjackSortAndSummary\\": "src/"
+		}
+	}
+}
