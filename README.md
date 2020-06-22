@@ -67,8 +67,6 @@ Install and configure Lumberjack
 ```
 MyNamespace\StoryDetailsPage:
   show_in_sitetree: false
-  parent_classes:
-    - MyNamespace\StoryLandingPage
 MyNamespace\StoryLandingPage:
   extensions:
     - SilverStripe\Lumberjack\Model\Lumberjack
