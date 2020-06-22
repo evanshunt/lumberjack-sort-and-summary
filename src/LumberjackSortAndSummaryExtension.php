@@ -8,20 +8,25 @@ use SilverStripe\Lumberjack\Model\Lumberjack;
 
 class LumberjackSortAndSummaryExtension extends Lumberjack
 {
+    
+    // this will use $summary_fields and $default_sort of the provided class
     public function getLumberjackPagesForGridField($excluded = [])
     {
         $childClasses = $this->getChildClassesOtherThanSiteTree();
 
         if (count($childClasses) === 1) {
             $className = $childClasses[0];
-            return $className::get()->filter([
-                'ParentID' => $this->owner->ID,
-                'ClassName' => $excluded,
-            ]);
+            return $className::get()->filter(
+                [
+                    'ParentID' => $this->owner->ID,
+                    'ClassName' => $excluded,
+                ]
+            );
         }
         return parent::getLumberjackPagesForGridField();
     }
 
+    // this will change the tab title
     public function getLumberJackTitle()
     {
         $childClasses = $this->getChildClassesOtherThanSiteTree();
