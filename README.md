@@ -14,13 +14,13 @@ This module applies the above when a single child type is defined for the parent
 
 ## Installation
 
-`composer install evanshunt/lumberjack-sort-and-summary`
+`composer require evanshunt/lumberjack-sort-and-summary`
 
 ## Usage
 
 Define `$allowed_children` for the parent page. (Can be done either in yml config or model)
 
-```
+```php
 namespace MyNamespace;
 
 use Page;
@@ -35,7 +35,7 @@ class StoryLandingPage extends Page
 
 Define `$plural_name`, `$summary_fields`, and `$default_sort` for child page.
 
-```
+```php
 namespace MyNamespace;
 
 use Page;
@@ -64,7 +64,7 @@ class StoryDetailsPage extends Page
 
 Install and configure Lumberjack
 
-```
+```yml
 MyNamespace\StoryDetailsPage:
   show_in_sitetree: false
 MyNamespace\StoryLandingPage:
