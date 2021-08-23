@@ -26,15 +26,18 @@ class LumberjackSortAndSummaryExtension extends Lumberjack
         return parent::getLumberjackPagesForGridField();
     }
 
-    // this will change the tab title
-    public function getLumberJackTitle()
+    public function getLumberjackTitle()
     {
-        $childClasses = $this->getChildClassesOtherThanSiteTree();
-
-        if (count($childClasses) === 1) {
-            return Config::inst()->get($childClasses[0], 'plural_name');
+        $children = $this->getChildClassesOtherThanSiteTree();
+        $names = [];
+        if(is_array($children) && count($children)) {
+            foreach($children as $childClassName) {
+                if($childClassName !== SiteTree::class && $childClassName !== Page::class) {
+                    $names[] = Injector::inst()->get($childClassName)->i18n_plural_name();
+                }
+            }
         }
-        return parent::getLumberjackTitle();
+        return count($names) ? implode(', ', $names) : _t(LumberJack::class. '.TabTitle', 'Child Pages');
     }
 
     private function getChildClassesOtherThanSiteTree()
