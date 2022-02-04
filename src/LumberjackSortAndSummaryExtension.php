@@ -32,12 +32,12 @@ class LumberjackSortAndSummaryExtension extends Lumberjack
         $names = [];
         if(is_array($children) && count($children)) {
             foreach($children as $childClassName) {
-                if($childClassName !== SiteTree::class && $childClassName !== Page::class) {
+                if($childClassName !== Page::class) {
                     $names[] = Injector::inst()->get($childClassName)->i18n_plural_name();
                 }
             }
         }
-        return count($names) ? implode(', ', $names) : _t(LumberJack::class. '.TabTitle', 'Child Pages');
+        return count($names) ? implode(', ', $names) : parent::getLumberjackTitle();
     }
 
     private function getChildClassesOtherThanSiteTree()
