@@ -23,7 +23,7 @@ class LumberjackSortAndSummaryExtension extends Lumberjack
                 ]
             );
         }
-        return parent::getLumberjackPagesForGridField();
+        return parent::getLumberjackPagesForGridField($excluded);
     }
 
     // this will change the tab title
