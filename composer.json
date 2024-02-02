@@ -14,9 +14,9 @@
 		"issues": "http://github.com/evanshunt/lumberjack-sort-and-summary/issues"
 	},
 	"require": {
-		"silverstripe/framework": "^4",
-        "silverstripe/cms": "^4",
-        "silverstripe/lumberjack": "^2"
+		"silverstripe/framework": "^5",
+        "silverstripe/cms": "^5",
+        "silverstripe/lumberjack": "^3"
 	},
 	"autoload": {
 		"psr-4": {
